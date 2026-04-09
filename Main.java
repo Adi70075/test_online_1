@@ -7,15 +7,13 @@ class Book {
     private String author;
     private boolean available;
 
-    // Constructor
+    
     public Book(int bookId, String title, String author) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.available = true;
     }
-
-    // Getters & Setters
     public int getBookId() { return bookId; }
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
@@ -24,14 +22,10 @@ class Book {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-
-    // Display
     public void display() {
         System.out.println(bookId + " | " + title + " | " + author + " | " + (available ? "Available" : "Issued"));
     }
 }
-
-
 class Member {
     protected int memberId;
     protected String name;
@@ -40,19 +34,14 @@ class Member {
         this.memberId = memberId;
         this.name = name;
     }
-
     public int getMemberId() { return memberId; }
     public String getName() { return name; }
 }
-
-
 class StudentMember extends Member {
     public StudentMember(int memberId, String name) {
         super(memberId, name);
     }
 }
-
-
 class Library {
     private ArrayList<Book> books = new ArrayList<>();
     private HashMap<Integer, List<Book>> issuedBooks = new HashMap<>();
@@ -103,7 +92,7 @@ class Library {
         System.out.println("Book not found for this member.");
     }
 
-    // Search (Polymorphism - Overloading)
+    
     public void search(String title) {
         for (Book b : books) {
             if (b.getTitle().equalsIgnoreCase(title)) {
